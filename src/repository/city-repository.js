@@ -12,7 +12,7 @@ class CityRepository{
         }
     }
 
-    async updateCity(cityID , data){
+    async updateCity(cityID , data){ //data is passing as a object ex {name : "indore"} 
         try{
             const city = await City.update(data,{
                 where : {
