@@ -83,4 +83,6 @@ const update =async (req,res)=>{
             }
             }
 
-module.exports = cityService;
+module.exports = {
+    create,destroy,update,get
+}
