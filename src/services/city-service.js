@@ -2,6 +2,7 @@ const {CityRepository} = require("../repository/index");
 
 class cityService {
     constructor(){
+        //we can make this class same as city-repository code..but ye constructor ke through bhi aana chahiye thats isme constructor se bnaya
         this.cityRepository = new CityRepository();
     }
 
@@ -18,7 +19,7 @@ class cityService {
     async deleteCity(cityID){
         try{
             const city = await this.cityRepository.deleteCity(cityID);
-            return true;
+            return city;
         }catch(error){
             console.log("something went wrong at the service layer");
             throw {error}
