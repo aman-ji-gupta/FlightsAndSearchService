@@ -18,8 +18,7 @@ try{
         success : false,
         message : "Not able to create a city",
         err : error
-    })
-}
+    }) }
 }
 
 const destroy =async (req,res)=>{
