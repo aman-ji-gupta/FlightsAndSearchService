@@ -34,3 +34,32 @@ and then execute
  - A flight belongss to an airplane but one airplane can be used in multiple flights
  - A city has many airports but one airports belongs to a city
  - One airport can have many flights, but a flight belongs to an airport
+
+ ## Tables
+
+ ### City -> id , name , created_at , updated_at
+ ### Airport -> id , name , address , city_id , created_at , updated_at 
+    Relationship -> City has many airports and Airport belongs to a city(one to many)
+```
+npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:integer
+npx sequelize db:migrate
+
+npx sequelize seed:generate --name airports
+ npx sequelize db:seed:all
+
+
+npx sequelize model:generate --name Airplane --attributes modelNumber:String,capacity:integer
+npx sequelize db:migrate
+
+npx sequelize seed:generate --name airplanes
+ npx sequelize db:seed:all
+
+ npx sequelize model:generate --name Flights --attributes flightNumber:String,airplaneId:integer,departureAirportId:integer,arrivalAirportId:integer,arrivalTime:Date,departureTime:Date,price:integer,boardingGate:String,totalSeats:integer
+ npx sequelize db:migrate
+
+
+
+
+
+
+```
